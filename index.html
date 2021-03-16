@@ -21,7 +21,7 @@
 <br>
 <br>
 <br><br><br><br><br><br>
-<p ><h2 class="zag3">Илонакоин - самая прогрессирующая валюта. Покупая IlonaCoin - Вы выкладываетесь в стримера, помогаете ему. На валюту IlonaCoin вы можете поучаствовать в конкурсах и других событиях Ilona_tv</h2></p>
+<p ><h2 class="zag5">Илонакоин - самая прогрессирующая валюта. Покупая IlonaCoin - Вы выкладываетесь в стримера, помогаете ему. На валюту IlonaCoin вы можете поучаствовать в конкурсах и других событиях Ilona_tv</h2></p>
 <br><br><br><br><br><br><br><br><br>
 <footer>
  <center><h2 class="zag4">By MrWek & IlonaBank</h2></center>
@@ -38,6 +38,16 @@
 header {
 
 background-color:PowderBlue;
+}
+.zag5 .new { opacity: 0; }
+.zag5 { padding:100px; width:350px; display:none; }
+.zag5 .div_opacity {
+  -webkit-transition: opacity .2s ease-in-out;
+  -moz-transition: opacity .2s ease-in-out;
+  -ms-transition: opacity .2s ease-in-out;
+  -o-transition: opacity .2s ease-in-out;
+  transition: opacity .2s ease-in-out;
+  opacity: 1;
 }
 div {
  width: 80%;	height: 200px; /* Размеры */
@@ -71,6 +81,11 @@ color : MediumAquamarine;
 font-family: 'Caveat', cursive;
 }
 
+zag5 {
+color : MediumAquamarine;
+font-family: 'Caveat', cursive;
+}
+
 footer {
 background-color:PaleTurquoise;
 }
@@ -80,3 +95,20 @@ text-decoration:none;
 }
 
 </style>
+
+<script type="text/javascript">
+
+$.fn.animate_Text = function() {
+  var string = this.text();
+  return this.each(function(){
+   var $this = $(this);
+   $this.html(string.replace(/./g, '<span class="new">$&</span>'));
+   $this.find('span.new').each(function(i, el){
+    setTimeout(function(){ $(el).addClass('div_opacity'); }, 20 * i);
+   });
+  });
+ };
+ $('.zag5').show();
+ $('.zag5').animate_Text();
+
+</script>
