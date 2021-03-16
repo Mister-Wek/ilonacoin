@@ -1,7 +1,7 @@
 <head>
 <meta charset="utf-8">
 </head>
-
+<body>
 <header>
 
 <center> <h1 class="zag1" style="font-family: 'Caveat', cursive;" >Курс Илонакоина<h1> <center>
@@ -31,25 +31,19 @@
  <br>
 </footer>
 
-
+</body>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Caveat&display=swap');
+body{
+background-color:Lavender;
+}
 header {
 
 background-color:PowderBlue;
 }
-#zag5 .new { opacity: 0; }
-#zag5 { padding:100px; width:350px; display:none; }
-#zag5 .div_opacity {
-  -webkit-transition: opacity .2s ease-in-out;
-  -moz-transition: opacity .2s ease-in-out;
-  -ms-transition: opacity .2s ease-in-out;
-  -o-transition: opacity .2s ease-in-out;
-  transition: opacity .2s ease-in-out;
-  opacity: 1;
-}
-div .kyrs1 {
+
+div {
  width: 80%;	height: 200px; /* Размеры */
     background: LightCyan; /* Цвет фона */
     outline: 2px solid SkyBlue; /* Блевотная рамка */
@@ -96,19 +90,4 @@ text-decoration:none;
 
 </style>
 
-<script type="text/javascript">
 
-$.fn.animate_Text = function() {
-  var string = this.text();
-  return this.each(function(){
-   var $this = $(this);
-   $this.html(string.replace(/./g, '<span class="new">$&</span>'));
-   $this.find('span.new').each(function(i, el){
-    setTimeout(function(){ $(el).addClass('div_opacity'); }, 20 * i);
-   });
-  });
- };
- $('#zag5').show();
- $('#zag5').animate_Text();
-
-</script>
